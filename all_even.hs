@@ -14,3 +14,10 @@ module Main where
 
     allEvensWithComprehension :: [Integer] -> [Integer]
     allEvensWithComprehension (x)  = [ a | a <-  x, even a]               	 
+
+    allEvensWithGuard :: [Integer] -> [Integer]
+    allEvensWithGuard (h:t)
+        | null t && even h = [h]
+        | null t  = []
+    	| even h = h:allEvensWithGuard t
+        | odd h = allEvensWithGuard t
