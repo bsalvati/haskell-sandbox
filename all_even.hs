@@ -21,3 +21,6 @@ module Main where
         | null t  = []
     	| even h = h:allEvensWithGuard t
         | odd h = allEvensWithGuard t
+
+    allEvensWithFilter :: [Integer] -> [Integer]
+    allEvensWithFilter x = filter even x
